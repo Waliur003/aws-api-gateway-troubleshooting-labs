@@ -1,0 +1,29 @@
+python3 - <<'PY'
+import json
+import os
+
+region = os.environ["AWS_REGION"]
+account = os.environ["ACCOUNT_ID"]
+api_id = os.environ["REST_API_ID"]
+stage = os.environ["STAGE_NAME"]
+
+policy = {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowInvokeLab01Orders",
+            "Effect": "Allow",
+            "Action": "execute-api:Invoke",
+            "Resource": (
+                f"arn:aws:execute-api:{region}:"
+                f"{account}:{api_id}/{stage}/GET/orders"
+            )
+        }
+    ]
+}
+
+with open("api-invoke-policy.json", "w") as f:
+    json.dump(policy, f, indent=2)
+
+print("Caller invoke policy generated")
+PY
