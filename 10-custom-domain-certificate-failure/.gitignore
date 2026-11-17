@@ -1,0 +1,12 @@
+function.zip
+lab10-resources.env
+lab10-*.json
+lab10-*.txt
+*-response.json
+*-headers.txt
+__pycache__/
+*.pyc
+.env
+.env.*
+*.pem
+*.key
