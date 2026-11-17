@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 05 - CORS Troubleshooting</title>
+</head>
+<body>
+    <h2>API Gateway CORS Troubleshooting</h2>
+
+    <button onclick="testAPI()">Test API</button>
+
+    <pre id="result"></pre>
+
+    <script>
+        async function testAPI() {
+            const result = document.getElementById("result");
+
+            try {
+                const response = await fetch("API_URL_PLACEHOLDER", {
+                    method: "GET",
+                    headers: {
+                        "X-Lab-Client": "browser-test"
+                    }
+                });
+
+                const data = await response.json();
+                result.textContent = JSON.stringify(data, null, 2);
+
+            } catch (error) {
+                result.textContent = "Request failed: " + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
