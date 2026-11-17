@@ -1,0 +1,8 @@
+function.zip
+lab09-resources.env
+lab09-*.json
+lab09-*.txt
+*-headers.txt
+*-response.json
+__pycache__/
+*.pyc
