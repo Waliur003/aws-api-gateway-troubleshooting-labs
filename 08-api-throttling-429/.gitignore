@@ -1,0 +1,7 @@
+function.zip
+lab08-resources.env
+*-headers.txt
+*-response.json
+lab08-*.json
+__pycache__/
+*.pyc
